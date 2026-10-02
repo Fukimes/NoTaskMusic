@@ -55,7 +55,8 @@ namespace NoTaskMusic.Patch
                     }
 
                     int musicId = treasure.MusicId.id;
-                    if (musicId <= 0 || Singleton<DataManager>.Instance.GetMusic(musicId) == null
+                    MusicData music = Singleton<DataManager>.Instance.GetMusic(musicId);
+                    if (musicId <= 0 || music == null
                         || __1.IsUnlockMusic(UserData.MusicUnlock.Base, musicId))
                     {
                         continue;
@@ -63,6 +64,12 @@ namespace NoTaskMusic.Patch
 
                     // Add directly to preserve the player's selected music and avoid global force-change state.
                     __1.MusicUnlockList.Add(musicId);
+                    MelonLogger.Msg("[NoTaskMusic] Backfilled music: user=" + __1.Detail.UserID
+                        + ", map=" + playerMap.mapId
+                        + ", treasure=" + treasureId
+                        + ", playerDistance=" + playerMap.distance
+                        + ", nodeDistance=" + treasureExData.Distance
+                        + ", music=" + musicId + " (" + music.name.str + ")");
                     unlockedCount++;
                 }
             }
