@@ -9,13 +9,13 @@
 - 补发直接写入 `MusicUnlockList`，不会改变当前选曲或设置全局强制换曲状态。
 - `ForceChallengeFinalPhase` 关闭时，普通 `Challenge` 节点保持原有行为。
 
-## MelonPreferences
+## MelonPreferences 配置
 
-首次启动会创建 `NoTaskMusic` 分类，两个开关默认均为 `false`：
+首次启动会创建 `NoTaskMusic` 分类，`BackfillTaskMusic` 默认为 `true`，`ForceChallengeFinalPhase` 默认为 `false`：
 
 ```toml
 [NoTaskMusic]
-BackfillTaskMusic = false
+BackfillTaskMusic = true
 ForceChallengeFinalPhase = false
 ```
 
@@ -33,7 +33,7 @@ ForceChallengeFinalPhase = false
 
 ## 编译依赖
 
-将与目标游戏版本匹配的下列 DLL 放入 `Libs/`：
+请在编译前手动将下面这些 DLL 放入项目根目录的 `Libs/` 文件夹。它们应来自目标游戏安装目录和对应的 MelonLoader 安装，版本必须与目标游戏匹配：
 
 ```text
 0Harmony.dll
@@ -47,7 +47,9 @@ UnityEngine.IMGUIModule.dll
 UnityEngine.InputModule.dll
 UnityEngine.TextRenderingModule.dll
 ```
+## 编译
 
-本工作区中的 `Sinmai-Assist/Libs` 可作为同版本依赖来源。编译前选择 `Release | x64`，还原 `Microsoft.NETFramework.ReferenceAssemblies.net472` 后生成；输出为 `bin\Release\net472\NoTaskMusic.dll`。
-
-将 DLL 放入游戏目录的 `Mods` 文件夹。
+1. 使用 Visual Studio 打开 `NoTaskMusic.sln`，先按上面的列表准备 `Libs/` 中的 DLL。
+2. 选择 `Release | x64`，还原 NuGet 包 `Microsoft.NETFramework.ReferenceAssemblies.net472` 后生成。
+3. 输出文件为 `bin\Release\net472\NoTaskMusic.dll`。
+4. 将 DLL 放到游戏目录的 `Mods` 文件夹。

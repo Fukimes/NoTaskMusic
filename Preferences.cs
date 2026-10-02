@@ -18,7 +18,7 @@ namespace NoTaskMusic
             _category = MelonPreferences.CreateCategory(CategoryName, "No Task Music");
             _backfillTaskMusicEntry = _category.CreateEntry(
                 "BackfillTaskMusic",
-                false,
+                true,
                 "Backfill task music",
                 "补发旧存档中已到达但尚未解锁的课题曲。",
                 false,
@@ -28,7 +28,7 @@ namespace NoTaskMusic
                 "ForceChallengeFinalPhase",
                 false,
                 "Force challenge final phase",
-                "将 ChallengeDetail 的 unlockDifficulty 设为 Basic、startLife 设为 999。",
+                "将完美挑战难度改为 Basic，血量设为 999。",
                 false,
                 false,
                 null);
