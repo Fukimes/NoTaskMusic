@@ -18,7 +18,8 @@ namespace NoTaskMusic.Patch
         [HarmonyPostfix]
         public static void InitPostfix(NetUserData __0, UserData __1)
         {
-            if (__0 == null || __1 == null || __0.MapList == null || __0.MapList.Length == 0
+            if (!ModPreferences.BackfillTaskMusic || __0 == null || __1 == null
+                || __0.MapList == null || __0.MapList.Length == 0
                 || __1.MusicUnlockList == null)
             {
                 return;

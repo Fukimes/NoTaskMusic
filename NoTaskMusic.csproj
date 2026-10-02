@@ -18,7 +18,9 @@
 
   <ItemGroup>
     <Compile Include="Main.cs" />
+    <Compile Include="Preferences.cs" />
     <Compile Include="patch\MapTreasureData.cs" />
+    <Compile Include="patch\ChallengeManager.cs" />
     <Compile Include="patch\StateUserStore.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
