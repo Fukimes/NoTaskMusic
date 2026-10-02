@@ -20,7 +20,7 @@ ForceChallengeFinalPhase = false
 ```
 
 - `BackfillTaskMusic=true`：为旧玩家补发已到达但尚未解锁的课题曲。
-- `ForceChallengeFinalPhase=true`：让 `ChallengeManager.GetChallengeDetail` 返回的 `unlockDifficulty` 始终为 `Basic`，`startLife` 始终为 `999`。
+- `ForceChallengeFinalPhase=true`：让 `ChallengeManager.GetChallengeDetail` 返回的 `unlockDifficulty` 始终为 `Basic`，`startLife` 始终为 `300`。
 
 ## 项目结构
 

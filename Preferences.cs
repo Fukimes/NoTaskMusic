@@ -28,7 +28,7 @@ namespace NoTaskMusic
                 "ForceChallengeFinalPhase",
                 false,
                 "Force challenge final phase",
-                "将完美挑战难度改为 Basic，血量设为 999。",
+                "将完美挑战难度改为 Basic，血量设为 300。",
                 false,
                 false,
                 null);

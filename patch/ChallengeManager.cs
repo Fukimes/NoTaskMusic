@@ -18,7 +18,7 @@ namespace NoTaskMusic.Patch
             }
 
             __result.unlockDifficulty = MusicDifficultyID.Basic;
-            __result.startLife = 999;
+            __result.startLife = 300;
         }
     }
 }
